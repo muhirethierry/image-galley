@@ -1,0 +1,56 @@
+/* RESET */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* VARIABLES */
+:root {
+  --bg: #0f0f13;
+  --surface: #1a1a22;
+  --border: rgba(255,255,255,0.08);
+  --text: #f0f0f4;
+  --text-muted: #888898;
+  --accent: #7c6fff;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.card img {
+  width: 100%;
+  cursor: pointer;
+}
+
+/* LIGHTBOX */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: none;
+}
+
+#lightbox.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

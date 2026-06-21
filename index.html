@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Image Gallery</h1>
+  <p>Browse, filter and explore the collection</p>
+</header>
+
+<div class="controls">
+  <div class="filters" id="filters"></div>
+
+  <div class="search-wrap">
+    <input type="text" id="search" placeholder="Search images…">
+  </div>
+</div>
+
+<div class="count-bar" id="count-bar"></div>
+
+<div class="grid-container">
+  <div class="grid" id="grid"></div>
+
+  <div class="empty" id="empty">
+    <p>No images match your search.</p>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <div class="lb-box">
+
+    <button id="lb-close">X</button>
+    <button id="lb-prev">◀</button>
+    <button id="lb-next">▶</button>
+
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="">
+    </div>
+
+    <div class="lb-footer">
+      <div>
+        <div id="lb-name"></div>
+        <div id="lb-cat"></div>
+      </div>
+      <div id="lb-counter"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Link JS -->
+<script src="script.js"></script>
+</body>
+</html>
