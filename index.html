@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Gallery</title>
-
-  <!-- Link CSS -->
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Gallery</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>Image Gallery</h1>
-  <p>Browse, filter and explore the collection</p>
+  <h1>✦ Image Gallery</h1>
+  <p>Explore stunning photography across curated categories</p>
 </header>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num" id="stat-total">0</div><div class="stat-label">Images</div></div>
+  <div class="stat"><div class="stat-num" id="stat-categories">0</div><div class="stat-label">Categories</div></div>
+  <div class="stat"><div class="stat-num" id="stat-showing">0</div><div class="stat-label">Showing</div></div>
+</div>
 
 <div class="controls">
   <div class="filters" id="filters"></div>
-
   <div class="search-wrap">
-    <input type="text" id="search" placeholder="Search images…">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/>
+      <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="search" placeholder="Search images…" aria-label="Search images">
   </div>
 </div>
 
@@ -27,36 +34,45 @@
 
 <div class="grid-container">
   <div class="grid" id="grid"></div>
-
   <div class="empty" id="empty">
-    <p>No images match your search.</p>
+    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+      <rect x="3" y="3" width="18" height="18" rx="2"/>
+      <circle cx="8.5" cy="8.5" r="1.5"/>
+      <polyline points="21 15 16 10 5 21"/>
+    </svg>
+    <h3>No images found</h3>
+    <p>Try a different category or search term</p>
   </div>
 </div>
 
 <!-- Lightbox -->
-<div id="lightbox">
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
   <div class="lb-box">
-
-    <button id="lb-close">X</button>
-    <button id="lb-prev">◀</button>
-    <button id="lb-next">▶</button>
-
+    <button class="lb-close" id="lb-close" aria-label="Close">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="lb-nav lb-next" id="lb-next" aria-label="Next">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
     <div class="lb-img-wrap">
-      <img id="lb-img" src="">
+      <img id="lb-img" src="" alt="">
     </div>
-
     <div class="lb-footer">
-      <div>
-        <div id="lb-name"></div>
-        <div id="lb-cat"></div>
+      <div class="lb-meta">
+        <div class="lb-name" id="lb-name"></div>
+        <div class="lb-cat" id="lb-cat"></div>
       </div>
-      <div id="lb-counter"></div>
+      <div class="lb-counter" id="lb-counter"></div>
     </div>
-
   </div>
 </div>
 
-<!-- Link JS -->
 <script src="script.js"></script>
 </body>
 </html>
